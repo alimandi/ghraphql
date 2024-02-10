@@ -1,0 +1,58 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type createOutput {
+  message: String!
+}
+
+type person {
+  name: String!
+  family: String!
+  email: String!
+  age: Float!
+}
+
+type updateOutput {
+  message: String!
+  update: [person!]!
+}
+
+type findOneOutput {
+  message: String!
+  findOne: person!
+}
+
+type findAllOutput {
+  message: String!
+  findAll: [person!]!
+}
+
+type deleteOutput {
+  message: String!
+}
+
+type Query {
+  findAll: findAllOutput!
+  findOne(id: String!): findOneOutput!
+}
+
+type Mutation {
+  create(input: createInput!): createOutput!
+  update(id: String!, input: updateInput!): updateOutput!
+  remove(id: String!): deleteOutput!
+}
+
+input createInput {
+  name: String!
+  family: String!
+  email: String!
+  age: Float!
+}
+
+input updateInput {
+  name: String!
+  family: String!
+  email: String!
+  age: Float!
+}
